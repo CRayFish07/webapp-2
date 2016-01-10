@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chuchujie.webapp.provider.dao.RateStarDao" >
+  <resultMap id="BaseResultMap" type="com.chuchujie.webapp.common.entity.RateStar" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="star_num" property="starNum" jdbcType="INTEGER" />
+    <result column="order_sn" property="orderSn" jdbcType="VARCHAR" />
+    <result column="product_id" property="productId" jdbcType="BIGINT" />
+    <result column="addtime" property="addtime" jdbcType="INTEGER" />
+    <result column="rate_id" property="rateId" jdbcType="INTEGER" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, star_num, order_sn, product_id, addtime, rate_id, shop_id, status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from cc_rate_star
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cc_rate_star
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.chuchujie.webapp.common.entity.RateStar" >
+    insert into cc_rate_star (id, star_num, order_sn, 
+      product_id, addtime, rate_id, 
+      shop_id, status)
+    values (#{id,jdbcType=INTEGER}, #{starNum,jdbcType=INTEGER}, #{orderSn,jdbcType=VARCHAR}, 
+      #{productId,jdbcType=BIGINT}, #{addtime,jdbcType=INTEGER}, #{rateId,jdbcType=INTEGER}, 
+      #{shopId,jdbcType=INTEGER}, #{status,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.chuchujie.webapp.common.entity.RateStar" >
+    insert into cc_rate_star
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="starNum != null" >
+        star_num,
+      </if>
+      <if test="orderSn != null" >
+        order_sn,
+      </if>
+      <if test="productId != null" >
+        product_id,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+      <if test="rateId != null" >
+        rate_id,
+      </if>
+      <if test="shopId != null" >
+        shop_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="starNum != null" >
+        #{starNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderSn != null" >
+        #{orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="productId != null" >
+        #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=INTEGER},
+      </if>
+      <if test="rateId != null" >
+        #{rateId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null" >
+        #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.chuchujie.webapp.common.entity.RateStar" >
+    update cc_rate_star
+    <set >
+      <if test="starNum != null" >
+        star_num = #{starNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderSn != null" >
+        order_sn = #{orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="productId != null" >
+        product_id = #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=INTEGER},
+      </if>
+      <if test="rateId != null" >
+        rate_id = #{rateId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.chuchujie.webapp.common.entity.RateStar" >
+    update cc_rate_star
+    set star_num = #{starNum,jdbcType=INTEGER},
+      order_sn = #{orderSn,jdbcType=VARCHAR},
+      product_id = #{productId,jdbcType=BIGINT},
+      addtime = #{addtime,jdbcType=INTEGER},
+      rate_id = #{rateId,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      status = #{status,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

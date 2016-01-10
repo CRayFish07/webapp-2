@@ -1,0 +1,28 @@
+拉代码：
+1：进入需要拉去代码的目录
+2：打开git命令行
+3：mkdir 文件夹名称
+4：cd 文件夹名称
+5：git init
+6：git remote add 项目别名 git路径
+7：git pull 项目别名 master
+
+上传代码：
+1：合并代码
+2：git pull 有冲突解决冲突
+3：git status (不确定的文件执行git diff 文件名成 查看更改)
+3.1: git stash
+3.2: git pull origin master(此为分支名)
+3.3: git stash pop
+3.4: git status
+4：git add . (.代表所有文件，如果指定文件的话就是文件名)
+5：git commit -m '注释'
+6：git push 项目别名 master
+7：git status
+
+修改git路径:
+进入文件目录
+git remote -v （主要是查看配置情况）
+git remote remove origin （删除配置）
+git remote add origin xxx （添加新路径）
+git rempte -v （查看新配置是否生效）
