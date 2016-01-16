@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://code.alibabatech.com/schema/dubbo
-       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
- 	 <bean id="itemRatesService" class="com.chuchujie.webapp.provider.service.ItemRateServiceImpl"/>
- 	 <bean id="userService" class="com.chuchujie.webapp.provider.service.UserServiceImpl"/>
-	 <dubbo:service interface="com.chuchujie.webapp.common.service.UserService" ref="userService"  protocol="dubbo" timeout="1200000"/>
-	 <dubbo:service interface="com.chuchujie.webapp.common.service.ItemRatesService" ref="itemRatesService"  protocol="dubbo" timeout="1200000"/>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://code.alibabatech.com/schema/dubbo 
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<bean id="itemRatesService"
+		class="com.chuchujie.webapp.provider.service.ItemRateServiceImpl" />
+	<bean id="userService" class="com.chuchujie.webapp.provider.service.UserServiceImpl" />
+	<dubbo:service interface="com.chuchujie.webapp.common.service.UserService"
+		ref="userService" protocol="dubbo" timeout="1200000" />
+	<dubbo:service interface="com.chuchujie.webapp.common.service.ItemRatesService"
+		ref="itemRatesService" protocol="dubbo" timeout="1200000" />
 </beans>

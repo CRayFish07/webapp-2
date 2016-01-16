@@ -85,7 +85,7 @@
 			</if>
 			<if test="address != null">
 				address = #{address,jdbcType=VARCHAR},
-			</if>
+			</if> 
 		</set>
 		where id = #{id,jdbcType=INTEGER}
 	</update>
