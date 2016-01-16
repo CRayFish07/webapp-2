@@ -1,5 +1,6 @@
 package com.chuchujie.webapp.consumer.starter;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.chuchujie.webapp.common.entity.User;
@@ -7,6 +8,8 @@ import com.chuchujie.webapp.common.service.UserService;
 
 public class UserStarter {
 	public static void main(String[] args) {
+		PropertyConfigurator.configure(UserStarter.class.getClassLoader()
+				.getResource("log4jtcp.properties"));
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 				new String[] { "dubbox-im-consumer.xml" });
 		context.start();
