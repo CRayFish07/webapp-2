@@ -1,2 +1,2 @@
 # webapp
-SpringMVC+dubbo+redis+jedis+memcached+mybatis
+SpringMVC+dubbox+redis+jedis+memcached+mybatis
