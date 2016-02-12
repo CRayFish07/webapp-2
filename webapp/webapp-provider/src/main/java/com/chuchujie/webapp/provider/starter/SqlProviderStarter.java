@@ -13,6 +13,7 @@ public class SqlProviderStarter {
 				"DubboSpringAll.xml");
 		// context.refresh();
 		// context.start();
+		// 守护线程守护
 		new Thread() {
 			@Override
 			public void run() {
